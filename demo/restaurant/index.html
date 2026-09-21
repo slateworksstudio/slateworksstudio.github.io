@@ -1,38 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dim Sum House 點心軒 - Concept Sample by Slateworks Studio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dim Sum House 點心軒 - Sheung Wan | Concept Sample by Slateworks Studio</title>
 <style>
-body{margin:0;font-family:-apple-system,"Noto Sans HK",sans-serif;background:#fdf6ec;color:#2b2118;line-height:1.6}
-.banner{background:#b3402a;color:#fff;text-align:center;font-size:13px;padding:8px 12px}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
-header{text-align:center;padding:40px 0 20px}
-h1{font-size:34px;margin-bottom:4px}
-.zh{font-size:22px;color:#b3402a;font-weight:700}
-.tag{color:#7a6a58;margin-top:8px}
-section{padding:26px 0;border-top:1px solid #e8dcc8}
-h2{font-size:20px;color:#b3402a;margin-bottom:12px}
-ul{list-style:none;padding:0}
-li{padding:7px 0;border-bottom:1px dashed #e0d2ba;display:flex;justify-content:space-between}
-.cta{display:block;text-align:center;background:#2b6e4f;color:#fff;text-decoration:none;font-weight:700;padding:14px;border-radius:8px;margin:20px 0}
-footer{text-align:center;color:#7a6a58;font-size:13px;padding:20px 0 40px}
+:root{--ink:#2b2118;--paper:#faf3e8;--panel:#fffaf2;--red:#b3402a;--red-d:#93311f;--green:#2b6e4f;--gold:#c9a15a;--line:#e8dcc8;--muted:#7a6a58}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Segoe UI","PingFang HK","Noto Sans HK","Microsoft JhengHei",sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}
+.banner{background:var(--red);color:#fff;text-align:center;font-size:12.5px;padding:9px 14px;letter-spacing:.3px}
+nav{position:sticky;top:0;background:rgba(250,243,232,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:10}
+nav .in{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center}
+nav .brand{font-weight:800;font-size:17px;letter-spacing:.5px}
+nav .brand span{color:var(--red)}
+nav .links a{color:var(--muted);text-decoration:none;font-size:13.5px;margin-left:16px}
+nav .links a:hover{color:var(--red)}
+.hero{position:relative;height:66vh;min-height:420px;background:url('dimsum-hero.png') center/cover no-repeat}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,6,.15) 0%,rgba(20,10,6,.72) 100%)}
+.hero .txt{position:absolute;left:0;right:0;bottom:0;max-width:980px;margin:0 auto;padding:0 22px 44px;color:#fff}
+.hero .kicker{color:var(--gold);font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}
+.hero h1{font-family:Georgia,"Noto Serif TC",serif;font-size:52px;line-height:1.1;margin:8px 0 2px}
+.hero .zh{font-size:24px;font-weight:600;opacity:.92}
+.hero .sub{margin-top:12px;font-size:16px;opacity:.85;max-width:520px}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+section{padding:54px 0}
+h2{font-family:Georgia,"Noto Serif TC",serif;font-size:30px;margin-bottom:6px}
+.h2zh{color:var(--red);font-size:16px;font-weight:700;margin-bottom:26px}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.dish{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:flex;justify-content:space-between;align-items:baseline;transition:box-shadow .15s}
+.dish:hover{box-shadow:0 4px 18px rgba(80,50,20,.12)}
+.dish .n{font-weight:600;font-size:16px}
+.dish .d{color:var(--muted);font-size:13px;margin-top:3px}
+.dish .p{color:var(--red);font-weight:800;font-size:16px;white-space:nowrap;margin-left:14px}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+@media(max-width:720px){.about{grid-template-columns:1fr}.hero h1{font-size:38px}}
+.about img{width:100%;border-radius:14px}
+.about p{color:#4a3d30;margin-bottom:14px}
+.about .lede{font-size:19px;font-family:Georgia,"Noto Serif TC",serif}
+.info{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.info h3{font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);margin-bottom:8px}
+.info p{font-size:15px}
+.actionbar{background:#241a12;color:#fff;padding:50px 0}
+.actionbar h2{color:#fff}
+.actionbar .h2zh{color:var(--gold)}
+.pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:14.5px;text-decoration:none;color:#fff;transition:transform .12s}
+.pill:hover{transform:translateY(-2px)}
+.pill.or{background:#ff5a00}.pill.fp{background:#d70f64}.pill.kt{background:#ffd100;color:#3a2c00}
+.pill.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+.pill.fb{background:#1877f2}.pill.wa{background:#25d366;color:#08331a}
+.pill.map{background:#4285f4}
+.pill small{font-weight:400;opacity:.75;font-size:11px}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:34px 22px}
+footer b{color:var(--ink)}
 </style>
-<style>.heroimg{width:100%;border-radius:10px;margin:10px 0 0}.workimg{width:100%;border-radius:10px;margin:14px 0 0}</style></head>
+</head>
 <body>
-<div class="banner">CONCEPT SAMPLE 概念示範 - a demonstration one-page site built by Slateworks Studio. Not a real client.</div>
+<div class="banner">CONCEPT SAMPLE 概念示範 - a demonstration one-page site built by Slateworks Studio. Not a real client. 示範作品,並非真實客戶。</div>
+<nav><div class="in"><div class="brand">Dim Sum House <span>點心軒</span></div><div class="links"><a href="#menu">Menu</a><a href="#about">About</a><a href="#visit">Visit</a></div></div></nav>
+<div class="hero"><div class="veil"></div><div class="txt">
+<div class="kicker">Sheung Wan ・ Hong Kong 上環</div>
+<h1>Dim Sum House</h1><div class="zh">點心軒</div>
+<p class="sub">Handmade dim sum, steamed to order since 1998. 手工點心,即叫即蒸。</p>
+</div></div>
 <div class="wrap">
-<header><h1>Dim Sum House</h1><div class="zh">點心軒</div><p class="tag">Handmade dim sum, Jordan, Kowloon ・ 佐敦手工點心</p></header><img class="heroimg" src="dimsum-hero.png" alt="Bamboo steamer of har gow and siu mai">
-<section><h2>Menu 精選點心</h2><ul>
-<li><span>Har Gow 蝦餃 (4 pcs)</span><span>HK$38</span></li>
-<li><span>Siu Mai 燒賣 (4 pcs)</span><span>HK$36</span></li>
-<li><span>Char Siu Bao 叉燒包 (3 pcs)</span><span>HK$32</span></li>
-<li><span>Cheung Fun 滑腸粉</span><span>HK$34</span></li>
-<li><span>Egg Tart 酥皮蛋撻 (2 pcs)</span><span>HK$24</span></li>
-</ul></section>
-<img class="workimg" src="dimsum-bao.png" alt="Char siu bao on a plate"><section><h2>Hours 營業時間</h2><p>Mon-Sun 07:30 - 22:00 ・ 每日朝七半至晚十點<br>88 Battery Street, Jordan, Kowloon ・ 九龍佐敦炮台街88號</p></section>
-<a class="cta" href="#">WhatsApp us to book ・ WhatsApp 訂座</a>
-<footer>Dim Sum House 點心軒 ・ Concept sample by <b>Slateworks Studio</b></footer>
+
+<section id="menu">
+<h2>The Menu</h2><div class="h2zh">精選點心</div>
+<div class="menu">
+<div class="dish"><div><div class="n">Har Gow 蝦餃</div><div class="d">Crystal shrimp dumplings, 4 pcs</div></div><div class="p">HK$38</div></div>
+<div class="dish"><div><div class="n">Siu Mai 燒賣</div><div class="d">Pork & shrimp, crab roe, 4 pcs</div></div><div class="p">HK$36</div></div>
+<div class="dish"><div><div class="n">Char Siu Bao 叉燒包</div><div class="d">BBQ pork buns, 3 pcs</div></div><div class="p">HK$32</div></div>
+<div class="dish"><div><div class="n">Cheung Fun 滑腸粉</div><div class="d">Rice noodle rolls, sweet soy</div></div><div class="p">HK$34</div></div>
+<div class="dish"><div><div class="n">Egg Tart 酥皮蛋撻</div><div class="d">Flaky pastry, 2 pcs</div></div><div class="p">HK$24</div></div>
+<div class="dish"><div><div class="n">Pu-erh Pot 普洱</div><div class="d">Per person, free refills</div></div><div class="p">HK$12</div></div>
 </div>
+</section>
+
+<section id="about">
+<div class="about">
+<div>
+<h2>A proper yum cha morning</h2><div class="h2zh">一盅兩件</div>
+<p class="lede">One pot of tea, two baskets of dim sum - the way mornings were meant to start.</p>
+<p>Every dumpling is folded by hand each morning in our Sheung Wan kitchen. No central factory, no freezer truck - just flour, prawns, pork and twenty-six years of the same recipe.</p>
+<p>每日清晨,師傅喺上環店內即場包製全部點心。冇中央工場,冇雪藏貨 - 只係麵粉、鮮蝦、豬肉,同埋二十六年唔變嘅配方。</p>
+</div>
+<img src="dimsum-bao.png" alt="Char siu bao fresh from the steamer">
+</div>
+</section>
+
+<section id="visit">
+<h2>Find us</h2><div class="h2zh">營業時間及地址</div>
+<div class="info">
+<div><h3>Hours 營業時間</h3><p>Mon-Sun 07:30 - 22:00<br>每日朝七半至晚十點</p></div>
+<div><h3>Address 地址</h3><p>G/F, 12 Po Hing Fong, Sheung Wan<br>上環普慶坊12號地下</p></div>
+<div><h3>Contact 聯絡</h3><p>WhatsApp +852 9000 0000<br>hello@dimsumhouse.hk (demo)</p></div>
+</div>
+</section>
+</div>
+
+<div class="actionbar"><div class="wrap">
+<h2>Order & follow</h2><div class="h2zh">外賣及社交媒體</div>
+<div class="pills">
+<a class="pill or" href="https://www.openrice.com/en/hongkong" target="_blank" rel="noopener">OpenRice <small>reviews</small></a>
+<a class="pill fp" href="https://www.foodpanda.hk" target="_blank" rel="noopener">foodpanda <small>delivery</small></a>
+<a class="pill kt" href="https://www.keeta.com" target="_blank" rel="noopener">Keeta <small>delivery</small></a>
+<a class="pill ig" href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+<a class="pill fb" href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+<a class="pill wa" href="https://wa.me/85290000000" target="_blank" rel="noopener">WhatsApp <small>book a table</small></a>
+</div>
+<p style="color:#a89a88;font-size:12.5px;margin-top:18px">Demo note: these buttons point at each platform's homepage - on a real client site they would open the business's own listings and profiles.</p>
+</div></div>
+
+<footer>Dim Sum House 點心軒 ・ Concept sample by <b>Slateworks Studio</b> ・ hello@slateworksstudio.com</footer>
 </body>
 </html>

@@ -1,37 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lustre Salon - Concept Sample by Slateworks Studio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lustre Salon 亮髮廊 - Causeway Bay | Concept Sample by Slateworks Studio</title>
 <style>
-body{margin:0;font-family:-apple-system,"Noto Sans HK",sans-serif;background:#121016;color:#efeaf4;line-height:1.6}
-.banner{background:#7c4dbb;color:#fff;text-align:center;font-size:13px;padding:8px 12px}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
-header{text-align:center;padding:40px 0 20px}
-h1{font-size:34px;letter-spacing:2px}
-.zh{font-size:20px;color:#b98de0;font-weight:700;margin-top:4px}
-.tag{color:#9b8fae;margin-top:8px}
-section{padding:26px 0;border-top:1px solid #2c2635}
-h2{font-size:20px;color:#b98de0;margin-bottom:12px}
-ul{list-style:none;padding:0}
-li{padding:7px 0;border-bottom:1px dashed #352c42;display:flex;justify-content:space-between}
-.cta{display:block;text-align:center;background:#7c4dbb;color:#fff;text-decoration:none;font-weight:700;padding:14px;border-radius:8px;margin:20px 0}
-footer{text-align:center;color:#9b8fae;font-size:13px;padding:20px 0 40px}
+:root{--bg:#141118;--panel:#1e1a24;--ink:#f0ebe6;--muted:#a89eb0;--gold:#d4af7a;--gold-d:#b8935f;--line:#2e2836}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Segoe UI","PingFang HK","Noto Sans HK","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+.banner{background:#3a2a12;color:#f5c66b;text-align:center;font-size:12.5px;padding:9px 14px}
+nav{position:sticky;top:0;background:rgba(20,17,24,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:10}
+nav .in{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center}
+nav .brand{font-weight:800;font-size:17px;letter-spacing:1px}
+nav .brand span{color:var(--gold)}
+nav .links a{color:var(--muted);text-decoration:none;font-size:13.5px;margin-left:16px}
+nav .links a:hover{color:var(--gold)}
+.hero{position:relative;height:66vh;min-height:420px;background:url('salon-hero.png') center/cover no-repeat}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,14,.2) 0%,rgba(10,8,14,.78) 100%)}
+.hero .txt{position:absolute;left:0;right:0;bottom:0;max-width:980px;margin:0 auto;padding:0 22px 44px}
+.hero .kicker{color:var(--gold);font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}
+.hero h1{font-family:Georgia,"Noto Serif TC",serif;font-size:52px;line-height:1.1;margin:8px 0 2px;color:#fff}
+.hero .zh{font-size:24px;font-weight:600;color:#e8ddcf}
+.hero .sub{margin-top:12px;font-size:16px;color:#cfc5b8;max-width:520px}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+section{padding:54px 0}
+h2{font-family:Georgia,"Noto Serif TC",serif;font-size:30px;margin-bottom:6px}
+.h2zh{color:var(--gold);font-size:16px;font-weight:700;margin-bottom:26px}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.svc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;transition:box-shadow .15s}
+.svc:hover{box-shadow:0 4px 22px rgba(212,175,122,.12)}
+.svc .top{display:flex;justify-content:space-between;align-items:baseline}
+.svc .n{font-weight:600;font-size:16px}
+.svc .p{color:var(--gold);font-weight:800;white-space:nowrap;margin-left:14px}
+.svc .d{color:var(--muted);font-size:13.5px;margin-top:6px}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+@media(max-width:720px){.about{grid-template-columns:1fr}.hero h1{font-size:38px}}
+.about img{width:100%;border-radius:14px}
+.about p{color:#d8d0c6;margin-bottom:14px}
+.about .lede{font-size:19px;font-family:Georgia,"Noto Serif TC",serif;color:#fff}
+.info{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.info h3{font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:8px}
+.info p{font-size:15px}
+.actionbar{background:#0e0c12;padding:50px 0;border-top:1px solid var(--line)}
+.actionbar h2{color:#fff}
+.pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:14.5px;text-decoration:none;color:#fff;transition:transform .12s}
+.pill:hover{transform:translateY(-2px)}
+.pill.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+.pill.fb{background:#1877f2}
+.pill.wa{background:#25d366;color:#08331a}
+.pill.map{background:#4285f4}
+.pill small{font-weight:400;opacity:.75;font-size:11px}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:34px 22px}
+footer b{color:var(--ink)}
 </style>
-<style>.heroimg{width:100%;border-radius:10px;margin:10px 0 0}.workimg{width:100%;border-radius:10px;margin:14px 0 0}</style></head>
+</head>
 <body>
-<div class="banner">CONCEPT SAMPLE 概念示範 - a demonstration one-page site built by Slateworks Studio. Not a real client.</div>
+<div class="banner">CONCEPT SAMPLE 概念示範 - a demonstration one-page site built by Slateworks Studio. Not a real client. 示範作品,並非真實客戶。</div>
+<nav><div class="in"><div class="brand">Lustre <span>亮髮廊</span></div><div class="links"><a href="#services">Services</a><a href="#about">About</a><a href="#visit">Visit</a></div></div></nav>
+<div class="hero"><div class="veil"></div><div class="txt">
+<div class="kicker">Causeway Bay ・ Hong Kong 銅鑼灣</div>
+<h1>Lustre Salon</h1><div class="zh">亮髮廊</div>
+<p class="sub">Colour, cut and keratin with a harbour view. 銅鑼灣海景髮廊,染髮、剪髮、角蛋白護理。</p>
+</div></div>
 <div class="wrap">
-<header><h1>LUSTRE SALON</h1><div class="zh">亮髮廊</div><p class="tag">Cuts, colour & treatments, Causeway Bay ・ 銅鑼灣剪染護理</p></header><img class="heroimg" src="salon-hero.png" alt="Lustre Salon interior overlooking the harbour">
-<section><h2>Services 服務</h2><ul>
-<li><span>Cut & Blow-dry 剪髮吹造型</span><span>HK$380</span></li>
-<li><span>Full Colour 全頭染髮</span><span>HK$880</span></li>
-<li><span>Highlights 挑染</span><span>HK$1,180</span></li>
-<li><span>Keratin Treatment 角蛋白護理</span><span>HK$1,480</span></li>
-</ul></section>
-<img class="workimg" src="salon-work.png" alt="Stylist blow-drying a client's hair"><section><h2>Visit us 地址及時間</h2><p>Tue-Sun 10:30 - 20:00 (closed Mon) ・ 逢星期一休息<br>12/F, 525 Lockhart Road, Causeway Bay ・ 銅鑼灣駱克道525號12樓</p></section>
-<a class="cta" href="#">Book on WhatsApp ・ WhatsApp 預約</a>
-<footer>Lustre Salon 亮髮廊 ・ Concept sample by <b>Slateworks Studio</b></footer>
+
+<section id="services">
+<h2>Services</h2><div class="h2zh">服務及價目</div>
+<div class="services">
+<div class="svc"><div class="top"><div class="n">Cut & Finish 剪髮造型</div><div class="p">HK$480+</div></div><div class="d">Consultation, precision cut, wash and blow-dry. 諮詢、精剪、洗吹。</div></div>
+<div class="svc"><div class="top"><div class="n">Full Colour 全頭染髮</div><div class="p">HK$880+</div></div><div class="d">Ammonia-free options, gloss finish. 可選無氨配方,亮澤完成。</div></div>
+<div class="svc"><div class="top"><div class="n">Balayage 漸變挑染</div><div class="p">HK$1,380+</div></div><div class="d">Hand-painted dimension, toner included. 手刷漸變,包調色。</div></div>
+<div class="svc"><div class="top"><div class="n">Keratin Repair 角蛋白修護</div><div class="p">HK$1,180</div></div><div class="d">90-minute bond-repair treatment. 90分鐘鏈鍵修復護理。</div></div>
+<div class="svc"><div class="top"><div class="n">Men's Cut 男士理髮</div><div class="p">HK$380+</div></div><div class="d">Cut, wash, style in 45 minutes. 45分鐘剪洗造型。</div></div>
+<div class="svc"><div class="top"><div class="n">Blow-dry 吹髮造型</div><div class="p">HK$280</div></div><div class="d">Event-ready finish in 30 minutes. 30分鐘宴會造型。</div></div>
 </div>
+</section>
+
+<section id="about">
+<div class="about">
+<div>
+<h2>Hair that survives humidity</h2><div class="h2zh">對抗潮濕天氣嘅秀髮</div>
+<p class="lede">Hong Kong air is hard on hair. Our work is designed to hold through it.</p>
+<p>Every service starts with a ten-minute consultation - face shape, lifestyle, how much time you actually spend on your hair. Then we cut and colour for the real world, not the photo.</p>
+<p>每項服務都由十分鐘諮詢開始:面型、生活習慣、你實際會花幾多時間打理頭髮。我哋為真實生活而剪,唔係為咗影相。</p>
+</div>
+<img src="salon-work.png" alt="Stylist at work in the salon">
+</div>
+</section>
+
+<section id="visit">
+<h2>Find us</h2><div class="h2zh">營業時間及地址</div>
+<div class="info">
+<div><h3>Hours 營業時間</h3><p>Tue-Sun 10:00 - 20:00<br>逢星期一休息</p></div>
+<div><h3>Address 地址</h3><p>12/F, 88 Lockhart Road, Causeway Bay<br>銅鑼灣駱克道88號12樓</p></div>
+<div><h3>Contact 聯絡</h3><p>WhatsApp +852 9000 0000<br>book@lustresalon.hk (demo)</p></div>
+</div>
+</section>
+</div>
+
+<div class="actionbar"><div class="wrap">
+<h2>Book & follow</h2><div class="h2zh">預約及社交媒體</div>
+<div class="pills">
+<a class="pill wa" href="https://wa.me/85290000000" target="_blank" rel="noopener">WhatsApp <small>book now</small></a>
+<a class="pill ig" href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+<a class="pill fb" href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+<a class="pill map" href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>
+</div>
+<p style="color:#6f6678;font-size:12.5px;margin-top:18px">Demo note: these buttons point at each platform's homepage - on a real client site they would open the business's own profiles and booking chat.</p>
+</div></div>
+
+<footer>Lustre Salon 亮髮廊 ・ Concept sample by <b>Slateworks Studio</b> ・ hello@slateworksstudio.com</footer>
 </body>
 </html>

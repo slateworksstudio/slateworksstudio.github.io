@@ -1,37 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peak Tailors - Concept Sample by Slateworks Studio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peak Tailors 山頂裁縫 - Central | Concept Sample by Slateworks Studio</title>
 <style>
-body{margin:0;font-family:Georgia,"Noto Sans HK",serif;background:#f5f2ec;color:#24211c;line-height:1.6}
-.banner{background:#28425e;color:#fff;text-align:center;font-size:13px;padding:8px 12px;font-family:-apple-system,sans-serif}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
-header{text-align:center;padding:40px 0 20px}
-h1{font-size:34px;letter-spacing:3px}
-.zh{font-size:20px;color:#28425e;font-weight:700;margin-top:4px}
-.tag{color:#6f675a;margin-top:8px}
-section{padding:26px 0;border-top:1px solid #d9d2c4}
-h2{font-size:20px;color:#28425e;margin-bottom:12px}
-ul{list-style:none;padding:0}
-li{padding:7px 0;border-bottom:1px dashed #cfc7b6;display:flex;justify-content:space-between}
-.cta{display:block;text-align:center;background:#28425e;color:#fff;text-decoration:none;font-weight:700;padding:14px;border-radius:4px;margin:20px 0;font-family:-apple-system,sans-serif}
-footer{text-align:center;color:#6f675a;font-size:13px;padding:20px 0 40px}
+:root{--bg:#10150f;--panel:#18201a;--ink:#ecefe8;--muted:#9aa695;--green:#7fae6e;--green-d:#648f55;--line:#26302a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Segoe UI","PingFang HK","Noto Sans HK","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+.banner{background:#1d3316;color:#c9e3b8;text-align:center;font-size:12.5px;padding:9px 14px}
+nav{position:sticky;top:0;background:rgba(16,21,15,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:10}
+nav .in{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center}
+nav .brand{font-weight:800;font-size:17px;letter-spacing:1px}
+nav .brand span{color:var(--green)}
+nav .links a{color:var(--muted);text-decoration:none;font-size:13.5px;margin-left:16px}
+nav .links a:hover{color:var(--green)}
+.hero{position:relative;height:66vh;min-height:420px;background:url('tailor-hero.png') center/cover no-repeat}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,7,.2) 0%,rgba(8,12,7,.78) 100%)}
+.hero .txt{position:absolute;left:0;right:0;bottom:0;max-width:980px;margin:0 auto;padding:0 22px 44px}
+.hero .kicker{color:var(--green);font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}
+.hero h1{font-family:Georgia,"Noto Serif TC",serif;font-size:52px;line-height:1.1;margin:8px 0 2px;color:#fff}
+.hero .zh{font-size:24px;font-weight:600;color:#dfe8d8}
+.hero .sub{margin-top:12px;font-size:16px;color:#c3cdbc;max-width:520px}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+section{padding:54px 0}
+h2{font-family:Georgia,"Noto Serif TC",serif;font-size:30px;margin-bottom:6px}
+.h2zh{color:var(--green);font-size:16px;font-weight:700;margin-bottom:26px}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.svc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;transition:box-shadow .15s}
+.svc:hover{box-shadow:0 4px 22px rgba(127,174,110,.12)}
+.svc .top{display:flex;justify-content:space-between;align-items:baseline}
+.svc .n{font-weight:600;font-size:16px}
+.svc .p{color:var(--green);font-weight:800;white-space:nowrap;margin-left:14px}
+.svc .d{color:var(--muted);font-size:13.5px;margin-top:6px}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+@media(max-width:720px){.about{grid-template-columns:1fr}.hero h1{font-size:38px}}
+.about img{width:100%;border-radius:14px}
+.about p{color:#d4dbd0;margin-bottom:14px}
+.about .lede{font-size:19px;font-family:Georgia,"Noto Serif TC",serif;color:#fff}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+.step .num{font-family:Georgia,serif;font-size:28px;color:var(--green);font-weight:700}
+.step .t{font-weight:600;margin:6px 0 4px}
+.step .d{color:var(--muted);font-size:13.5px}
+.info{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.info h3{font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:var(--green);margin-bottom:8px}
+.info p{font-size:15px}
+.actionbar{background:#0b0f0a;padding:50px 0;border-top:1px solid var(--line)}
+.actionbar h2{color:#fff}
+.pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:14.5px;text-decoration:none;color:#fff;transition:transform .12s}
+.pill:hover{transform:translateY(-2px)}
+.pill.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+.pill.fb{background:#1877f2}
+.pill.wa{background:#25d366;color:#08331a}
+.pill.map{background:#4285f4}
+.pill small{font-weight:400;opacity:.75;font-size:11px}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:34px 22px}
+footer b{color:var(--ink)}
 </style>
-<style>.heroimg{width:100%;border-radius:10px;margin:10px 0 0}.workimg{width:100%;border-radius:10px;margin:14px 0 0}</style></head>
+</head>
 <body>
-<div class="banner">CONCEPT SAMPLE 概念示範 - a demonstration one-page site built by Slateworks Studio. Not a real client.</div>
+<div class="banner">CONCEPT SAMPLE 概念示範 - a demonstration one-page site built by Slateworks Studio. Not a real client. 示範作品,並非真實客戶。</div>
+<nav><div class="in"><div class="brand">Peak Tailors <span>山頂裁縫</span></div><div class="links"><a href="#services">Services</a><a href="#craft">Craft</a><a href="#visit">Visit</a></div></div></nav>
+<div class="hero"><div class="veil"></div><div class="txt">
+<div class="kicker">Central ・ Hong Kong 中環</div>
+<h1>Peak Tailors</h1><div class="zh">山頂裁縫</div>
+<p class="sub">Bespoke suits and alterations, cut on the Island since 1974. 香港洋服訂製,一九七四年創立。</p>
+</div></div>
 <div class="wrap">
-<header><h1>PEAK TAILORS</h1><div class="zh">山頂裁縫</div><p class="tag">Bespoke suits & alterations, Central ・ 中環度身訂造西裝及改衣</p></header><img class="heroimg" src="tailor-hero.png" alt="Tailor shop interior with suiting fabric">
-<section><h2>Services 服務</h2><ul>
-<li><span>Bespoke two-piece suit 度身訂造兩件頭西裝</span><span>from HK$6,800</span></li>
-<li><span>Made-to-measure shirt 訂造恤衫</span><span>from HK$780</span></li>
-<li><span>Suit alterations 西裝修改</span><span>from HK$280</span></li>
-<li><span>Express 48-hour alteration 特快48小時改衣</span><span>from HK$450</span></li>
-</ul></section>
-<img class="workimg" src="tailor-work.png" alt="Tailor pinning a suit lapel"><section><h2>Find us 地址及時間</h2><p>Mon-Sat 10:00 - 19:00 ・ 星期一至六朝十晚七<br>Shop 304, 38 Queen's Road Central ・ 中環皇后大道中38號304鋪</p></section>
-<a class="cta" href="#">Message us on WhatsApp ・ WhatsApp 查詢</a>
-<footer>Peak Tailors 山頂裁縫 ・ Concept sample by <b>Slateworks Studio</b></footer>
+
+<section id="services">
+<h2>Services</h2><div class="h2zh">服務及價目</div>
+<div class="services">
+<div class="svc"><div class="top"><div class="n">Bespoke Two-Piece 度身訂造西裝</div><div class="p">from HK$6,800</div></div><div class="d">Full canvas, two fittings, house cloth from HK$6,800. 全毛襯,兩次試身。</div></div>
+<div class="svc"><div class="top"><div class="n">Bespoke Shirt 訂造恤衫</div><div class="p">from HK$680</div></div><div class="d">Twelve collar styles, monogram included. 十二款領型,包繡字。</div></div>
+<div class="svc"><div class="top"><div class="n">Qipao 旗袍訂製</div><div class="p">from HK$3,800</div></div><div class="d">Traditional cut, hand-rolled edges. 傳統剪裁,手工捲邊。</div></div>
+<div class="svc"><div class="top"><div class="n">Alterations 改衣服務</div><div class="p">from HK$120</div></div><div class="d">Hems, waists, sleeves - same week. 改長短、腰身、袖,當週取件。</div></div>
+<div class="svc"><div class="top"><div class="n">Wedding Package 婚禮套裝</div><div class="p">from HK$9,800</div></div><div class="d">Suit, shirt and two fittings, rush available. 西裝、恤衫、兩次試身,可加急。</div></div>
+<div class="svc"><div class="top"><div class="n">Wardrobe Consult 衣櫥諮詢</div><div class="p">HK$500</div></div><div class="d">One hour, in-store or video. Credited to orders. 一小時諮詢,可扣回訂單。</div></div>
 </div>
+</section>
+
+<section id="craft">
+<div class="about">
+<div>
+<h2>Fifty years at the same bench</h2><div class="h2zh">五十年同一張裁床</div>
+<p class="lede">A suit is three hundred decisions. We make them slowly, once, and get them right.</p>
+<p>Master Chan opened the shop in 1974 and still cuts every pattern himself. Cloth is sourced from English and Italian mills, linings sewn by hand, buttonholes finished one at a time.</p>
+<p>陳師傅一九七四年開舖,至今仍親自開每一個紙樣。布料採自英國及意大利布廠,裡布手工縫製,鈕門逐個鎖。</p>
+</div>
+<img src="tailor-work.png" alt="Hand-finished lapel work">
+</div>
+<div style="height:34px"></div>
+<div class="steps">
+<div class="step"><div class="num">1</div><div class="t">Measure 度身</div><div class="d">Forty measurements, posture noted. 四十個尺寸,記錄體態。</div></div>
+<div class="step"><div class="num">2</div><div class="t">Cut 開樣</div><div class="d">Your pattern, kept on file for life. 專屬紙樣,永久保存。</div></div>
+<div class="step"><div class="num">3</div><div class="t">Fit 試身</div><div class="d">Basted fitting, adjustments marked. 毛樣試身,現場修正。</div></div>
+<div class="step"><div class="num">4</div><div class="t">Finish 完成</div><div class="d">Final press and delivery in 4-6 weeks. 四至六週完成整熨交付。</div></div>
+</div>
+</section>
+
+<section id="visit">
+<h2>Find us</h2><div class="h2zh">營業時間及地址</div>
+<div class="info">
+<div><h3>Hours 營業時間</h3><p>Mon-Sat 10:00 - 19:00<br>逢星期日休息</p></div>
+<div><h3>Address 地址</h3><p>2/F, 38 Cochrane Street, Central<br>中環閣麟街38號2樓</p></div>
+<div><h3>Contact 聯絡</h3><p>WhatsApp +852 9000 0000<br>appointments@peaktailors.hk (demo)</p></div>
+</div>
+</section>
+</div>
+
+<div class="actionbar"><div class="wrap">
+<h2>Book & follow</h2><div class="h2zh">預約及社交媒體</div>
+<div class="pills">
+<a class="pill wa" href="https://wa.me/85290000000" target="_blank" rel="noopener">WhatsApp <small>book a fitting</small></a>
+<a class="pill ig" href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+<a class="pill fb" href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+<a class="pill map" href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>
+</div>
+<p style="color:#67725f;font-size:12.5px;margin-top:18px">Demo note: these buttons point at each platform's homepage - on a real client site they would open the business's own profiles and booking chat.</p>
+</div></div>
+
+<footer>Peak Tailors 山頂裁縫 ・ Concept sample by <b>Slateworks Studio</b> ・ hello@slateworksstudio.com</footer>
 </body>
 </html>
