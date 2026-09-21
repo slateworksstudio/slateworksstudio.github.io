@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Pitch Deck - Slateworks Studio</title>
+<style>
+:root{--bg:#0f1216;--panel:#171c23;--ink:#e8ecf1;--muted:#9aa5b1;--accent:#6ea8fe;--line:#262d38}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans HK","Noto Sans SC","PingFang HK","Microsoft JhengHei",sans-serif}
+.banner{background:#3a2a12;color:#f5c66b;text-align:center;padding:10px;font-size:13px;font-weight:600;letter-spacing:.4px}
+.topbar{max-width:900px;margin:0 auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center}
+.topbar a{color:var(--accent);text-decoration:none;font-size:14px}
+.counter{color:var(--muted);font-size:13px}
+.deck{max-width:900px;margin:0 auto;padding:0 24px 30px}
+.slide{display:none;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:56px 52px;min-height:420px}
+.slide.on{display:block}
+.kicker{color:var(--accent);font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+h1{font-size:38px;line-height:1.2;margin-bottom:14px}
+h2{font-size:28px;margin-bottom:18px}
+p,li{color:#cfd6de;font-size:16.5px;line-height:1.65}
+.sub{color:var(--muted);font-size:17px}
+ul{margin-left:22px}
+li{margin:9px 0}
+.stats{display:flex;gap:18px;margin-top:26px;flex-wrap:wrap}
+.stat{background:#101820;border:1px solid var(--line);border-radius:10px;padding:18px 22px;flex:1;min-width:150px}
+.stat .n{font-size:26px;font-weight:700;color:var(--accent)}
+.stat .l{color:var(--muted);font-size:13px;margin-top:4px}
+.nav{max-width:900px;margin:0 auto;padding:0 24px 40px;display:flex;gap:12px}
+.nav button{flex:1;background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:13px;border-radius:9px;font-size:15px;cursor:pointer}
+.nav button:hover{border-color:var(--accent)}
+.cta{max-width:900px;margin:0 auto 40px;padding:22px 24px;background:var(--panel);border:1px solid var(--line);border-radius:10px;text-align:center}
+.cta strong{color:var(--accent)}
+footer{padding:20px 0 30px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;text-align:center;max-width:900px;margin:0 auto}
+</style>
+</head>
+<body>
+<div class="banner">CONCEPT SAMPLE 概念示範 &middot; fictional startup &middot; built by Slateworks Studio to show our deck work &middot; not a real client</div>
+<div class="topbar"><a href="../../">&larr; Slateworks Studio</a><span class="counter" id="counter">1 / 8</span></div>
+<div class="deck">
+
+<section class="slide on">
+  <div class="kicker">Pitch deck 宣傳簡報 &middot; concept</div>
+  <h1>Harbour Peak Roasters</h1>
+  <p class="sub">Specialty coffee, roasted in Wong Chuk Hang, delivered across Hong Kong Island within 24 hours.</p>
+  <p class="sub" style="margin-top:10px;font-size:14px">Seed round &middot; September 2026 &middot; confidential &middot; 種子輪融資簡介</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">The problem</div>
+  <h2>Hong Kong drinks great coffee. It just isn't fresh.</h2>
+  <ul>
+    <li>Most specialty beans sold in HK are roasted overseas and sit 4-8 weeks in transit and warehousing.</li>
+    <li>Flavour peaks 7-21 days after roasting - by the time beans reach a HK kitchen, the best is gone.</li>
+    <li>Local cafés want local supply chains; consumers increasingly do too.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="kicker">The solution</div>
+  <h2>Roast-to-door in 24 hours, Island-wide</h2>
+  <ul>
+    <li>Micro-roastery in Wong Chuk Hang roasting five days a week.</li>
+    <li>Order by 6pm, beans at your door - or your café - by 6pm tomorrow.</li>
+    <li>Subscription model: weekly, fortnightly or monthly, pause anytime.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="kicker">Market</div>
+  <h2>A HK$1.2B specialty segment, growing double digits</h2>
+  <div class="stats">
+    <div class="stat"><div class="n">HK$1.2B</div><div class="l">HK specialty coffee retail, 2025 (illustrative)</div></div>
+    <div class="stat"><div class="n">14%</div><div class="l">annual segment growth</div></div>
+    <div class="stat"><div class="n">620+</div><div class="l">independent cafés on HK Island &amp; Kowloon</div></div>
+  </div>
+  <p style="margin-top:22px">Illustrative figures for this concept deck - a real engagement sources and footnotes every number.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">Traction</div>
+  <h2>Nine months, three channels, repeat buyers</h2>
+  <div class="stats">
+    <div class="stat"><div class="n">1,400</div><div class="l">active subscribers</div></div>
+    <div class="stat"><div class="n">23</div><div class="l">wholesale café accounts</div></div>
+    <div class="stat"><div class="n">71%</div><div class="l">90-day subscriber retention</div></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Business model</div>
+  <h2>Subscriptions carry it. Wholesale scales it.</h2>
+  <ul>
+    <li>Direct subscriptions: HK$168/month average, 62% gross margin.</li>
+    <li>Wholesale to cafés: HK$95/kg, 41% margin, weekly standing orders.</li>
+    <li>Corporate gifting: seasonal spikes, highest margin (68%).</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="kicker">The ask</div>
+  <h2>HK$3.5M seed to double roasting capacity</h2>
+  <ul>
+    <li>60% - second roaster, packaging line, cold-chain delivery fleet.</li>
+    <li>25% - Kowloon and New Territories expansion, wholesale sales hire.</li>
+    <li>15% - working capital and green-bean forward contracts.</li>
+  </ul>
+  <p style="margin-top:18px" class="sub">Target close: Q1 2027.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">Contact</div>
+  <h2>Let's talk.</h2>
+  <p class="sub">Harbour Peak Roasters (fictional) &middot; Wong Chuk Hang, Hong Kong</p>
+  <p class="sub" style="margin-top:8px">This closing slide would carry the founder's real contact block in a live deck.</p>
+</section>
+
+</div>
+<div class="nav">
+  <button id="prev">&larr; Previous</button>
+  <button id="next">Next &rarr;</button>
+</div>
+<div class="cta">
+<strong>This is a demonstration deck.</strong><br>
+<span style="color:var(--muted);font-size:14px">Slateworks Studio structures, writes and formats pitch decks and company documents. HK$2,500 - HK$4,500. Delivered as slides, PDF or web.</span><br>
+<a href="../../" style="color:var(--accent)">See our services &rarr;</a>
+</div>
+<footer>&copy; 2026 Slateworks Studio &middot; hello@slateworksstudio.com &middot; sample work, not client work</footer>
+<script>
+var slides=document.querySelectorAll('.slide'),i=0;
+function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach(function(s,k){s.classList.toggle('on',k===i)});document.getElementById('counter').textContent=(i+1)+' / '+slides.length;window.scrollTo(0,0);}
+document.getElementById('prev').onclick=function(){show(i-1)};
+document.getElementById('next').onclick=function(){show(i+1)};
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')show(i+1);if(e.key==='ArrowLeft')show(i-1)});
+</script>
+</body>
+</html>
