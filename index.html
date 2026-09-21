@@ -3,146 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Slateworks Studio - Websites, Writing & Documents for Hong Kong Business</title>
-<meta name="description" content="Slateworks Studio builds one-page websites and produces sharp writing and documents for Hong Kong businesses. Trilingual: English, 繁體中文, 简体中文.">
+<title>Slateworks Studio - Websites & Writing for Hong Kong Business</title>
+<meta name="description" content="Slateworks Studio builds one-page websites and writes sharp copy for Hong Kong businesses. Trilingual: English, 繁體中文, 简体中文.">
 <style>
-:root{--bg:#0f1216;--panel:#171c23;--ink:#e8ecf1;--muted:#9aa5b1;--accent:#6ea8fe;--line:#262d38}
+:root{--bg:#0d1015;--panel:#151a21;--panel2:#1a212b;--ink:#eef1f6;--muted:#97a2b0;--accent:#7fb0ff;--gold:#d9b26a;--line:#242c38;--radius:14px}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans HK","Noto Sans SC","PingFang HK","Microsoft JhengHei",sans-serif;line-height:1.6}
-.wrap{max-width:880px;margin:0 auto;padding:0 24px}
-header{padding:28px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:700;font-size:20px;letter-spacing:.5px}
-.logo span{color:var(--accent)}
-.langswitch button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:6px 12px;margin-left:6px;border-radius:6px;cursor:pointer;font-size:13px}
-.langswitch button.active{color:var(--ink);border-color:var(--accent)}
-.hero{padding:72px 0 48px}
-.hero h1{font-size:40px;line-height:1.2;margin-bottom:18px}
-.hero p{font-size:18px;color:var(--muted);max-width:640px}
-section{padding:44px 0;border-top:1px solid var(--line)}
-h2{font-size:26px;margin-bottom:20px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px}
-.card h3{font-size:17px;margin-bottom:8px}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans HK","Noto Sans SC","PingFang HK","Microsoft JhengHei",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.serif{font-family:Georgia,"Times New Roman","Noto Serif TC","Noto Serif SC",serif}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:10;background:rgba(13,16,21,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding:16px 24px}
+.logo{font-weight:700;font-size:19px;letter-spacing:.4px}
+.logo em{font-style:normal;color:var(--gold)}
+.langswitch button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:6px 13px;margin-left:6px;border-radius:999px;cursor:pointer;font-size:13px;transition:all .15s}
+.langswitch button:hover{color:var(--ink)}
+.langswitch button.active{color:#0d1015;background:var(--gold);border-color:var(--gold)}
+.hero{position:relative;padding:96px 0 72px;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-180px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(217,178,106,.14),transparent 65%);pointer-events:none}
+.eyebrow{color:var(--gold);font-size:13px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:20px;font-weight:600}
+.hero h1{font-size:clamp(34px,5.2vw,56px);line-height:1.14;margin-bottom:22px;letter-spacing:-.01em;max-width:760px}
+.hero p{font-size:18.5px;color:var(--muted);max-width:620px;margin-bottom:34px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15.5px;transition:transform .15s,box-shadow .15s}
+.btn.primary{background:var(--gold);color:#141005}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(217,178,106,.25)}
+.btn.ghost{border:1px solid var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--gold)}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(24px,3vw,32px);margin-bottom:8px;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:15.5px;margin-bottom:32px;max-width:640px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:border-color .15s,transform .15s}
+.card:hover{border-color:#334052;transform:translateY(-3px)}
+.card h3{font-size:18px;margin-bottom:10px}
 .card p{color:var(--muted);font-size:14.5px}
-.price{color:var(--accent);font-weight:600;margin-top:10px;font-size:15px}
-ul.plain{list-style:none;color:var(--muted);font-size:15px}
-ul.plain li{padding:6px 0;border-bottom:1px dashed var(--line)}
-.samples a{display:inline-block;margin:6px 14px 6px 0;color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:10px 16px;background:var(--panel)}
-.samples a:hover{border-color:var(--accent)}
-.note{color:var(--muted);font-size:13px;margin-top:10px}
-.contact{text-align:center;padding:56px 0}
-.contact a.mail{display:inline-block;margin-top:14px;background:var(--accent);color:#0b0e12;font-weight:700;padding:13px 30px;border-radius:8px;text-decoration:none}
+.price{color:var(--gold);font-weight:700;margin-top:16px;font-size:15px;letter-spacing:.02em}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:22px}
+.shot{position:relative;display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);text-decoration:none;transition:transform .2s,border-color .2s}
+.shot:hover{transform:translateY(-4px);border-color:var(--gold)}
+.shot img{width:100%;height:200px;object-fit:cover;display:block}
+.shot .cap{position:absolute;left:0;right:0;bottom:0;padding:36px 18px 14px;background:linear-gradient(transparent,rgba(10,12,16,.92));color:#fff;font-weight:600;font-size:15px}
+.shot .cap small{display:block;color:#c9cdd6;font-weight:400;font-size:12.5px;margin-top:2px}
+.links{display:flex;flex-wrap:wrap;gap:12px}
+.links a{color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:12px 18px;background:var(--panel);font-size:14.5px;transition:border-color .15s}
+.links a:hover{border-color:var(--accent)}
+.note{color:var(--muted);font-size:13px;margin-top:18px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:step}
+.step{padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel2)}
+.step .n{font-family:Georgia,serif;color:var(--gold);font-size:26px;font-weight:700;display:block;margin-bottom:8px}
+.step h4{font-size:15.5px;margin-bottom:6px}
+.step p{color:var(--muted);font-size:14px}
+.contact{text-align:center;padding:80px 0}
+.contact h2{margin-bottom:12px}
+.contact p{color:var(--muted);margin-bottom:26px}
 footer{padding:26px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
 .lang{display:none}
 .lang.on{display:block}
 </style>
 </head>
 <body>
-<div class="wrap">
 <header>
-  <div class="logo">Slateworks<span>Studio</span></div>
+<div class="wrap">
+  <div class="logo">Slateworks <em>Studio</em></div>
   <div class="langswitch">
     <button id="b-en" class="active" onclick="setLang('en')">EN</button><button id="b-hk" onclick="setLang('hk')">繁體</button><button id="b-cn" onclick="setLang('cn')">简体</button>
   </div>
+</div>
 </header>
+<div class="wrap">
 
 <div class="lang on" id="lang-en">
-<section class="hero">
-  <h1>Your business, online in days - not months.</h1>
-  <p>Slateworks Studio builds fast, clean one-page websites for Hong Kong businesses, and produces the writing that fills them: web copy, articles, newsletters, decks and documents. English, Cantonese and Mandarin, done properly.</p>
-</section>
-<section>
-  <h2>What we do</h2>
-  <div class="cards">
-    <div class="card"><h3>One-Page Websites</h3><p>A complete, mobile-ready page for your business: menu or services, photos, opening hours, map, WhatsApp/contact button. Launched within 5 working days.</p><div class="price">HK$3,800 - HK$6,500</div></div>
-    <div class="card"><h3>Web & Marketing Copy</h3><p>Homepage and About copy, Google Business Profile text, flyers and social posts - written to sound like you, in English and Chinese.</p><div class="price">from HK$1,200</div></div>
-    <div class="card"><h3>Articles & Newsletters</h3><p>SEO articles and email newsletters that keep customers coming back. Trilingual available.</p><div class="price">HK$600 - HK$1,800 / piece</div></div>
-    <div class="card"><h3>Decks & Documents</h3><p>Pitch decks, company profiles, proposals and reports - structured, written and formatted.</p><div class="price">HK$2,500 - HK$4,500</div></div>
+<section class="hero" style="border-top:none">
+  <div class="eyebrow">Hong Kong &middot; Websites &amp; Writing</div>
+  <h1 class="serif">Your business, online in days. Written like you mean it.</h1>
+  <p>Slateworks Studio builds fast one-page websites for Hong Kong businesses and writes the words that fill them. English, Cantonese and Mandarin, done properly.</p>
+  <div class="cta">
+    <a class="btn primary" href="#samples">See sample work</a>
+    <a class="btn ghost" href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
   </div>
 </section>
-<section class="samples">
-  <h2>Sample work</h2>
-  <p class="note" style="margin-bottom:14px">Concept samples covering everything we sell - sites, copy, articles, newsletters and decks. All demonstration work, not client projects.</p>
-  <a href="demo/restaurant/">Website demo - Dim Sum House (restaurant)</a>
-  <a href="demo/salon/">Website demo - Lustre Salon (hair salon)</a>
-  <a href="demo/tailor/">Website demo - Peak Tailors (tailor)</a>
-  <a href="samples/webcopy/">Web & marketing copy - coffee shop copy set</a>
-  <a href="samples/article/">SEO article - "Yum Cha 101"</a>
-  <a href="samples/newsletter/">Newsletter - "The September Shine Report"</a>
-  <a href="samples/deck/">Pitch deck - Harbour Peak Roasters (8 slides)</a>
+<section>
+  <h2 class="serif">What we do</h2>
+  <p class="sub">Two things, done well: the site, and the words on it.</p>
+  <div class="cards">
+    <div class="card"><h3>One-Page Websites</h3><p>A complete, mobile-ready page for your business: menu or services, photos, opening hours, map and a WhatsApp button. Launched within 5 working days.</p><div class="price">HK$3,800 - HK$6,500</div></div>
+    <div class="card"><h3>Web &amp; Marketing Copy</h3><p>Homepage and About copy, Google Business Profile text, flyers and social posts - written to sound like you, in English and Chinese.</p><div class="price">from HK$1,200</div></div>
+    <div class="card"><h3>Articles &amp; Newsletters</h3><p>SEO articles and email newsletters that keep customers coming back. Trilingual available.</p><div class="price">HK$600 - HK$1,800 / piece</div></div>
+  </div>
+</section>
+<section class="samples" id="samples">
+  <h2 class="serif">Sample work</h2>
+  <p class="sub">Concept samples covering everything we sell - sites, copy, articles and newsletters. All demonstration work, not client projects.</p>
+  <div class="shots">
+    <a class="shot" href="demo/restaurant/"><img src="demo/restaurant/dimsum-hero.png" alt="Restaurant website demo"><span class="cap">Dim Sum House<small>Website demo &middot; Restaurant &middot; Sheung Wan</small></span></a>
+    <a class="shot" href="demo/salon/"><img src="demo/salon/salon-hero.png" alt="Salon website demo"><span class="cap">Lustre Salon<small>Website demo &middot; Hair salon &middot; Causeway Bay</small></span></a>
+    <a class="shot" href="demo/tailor/"><img src="demo/tailor/tailor-hero.png" alt="Tailor website demo"><span class="cap">Peak Tailors<small>Website demo &middot; Tailor &middot; Central</small></span></a>
+  </div>
+  <div class="links">
+    <a href="samples/webcopy/">Web &amp; marketing copy - coffee shop copy set</a>
+    <a href="samples/article/">SEO article - "Yum Cha 101"</a>
+    <a href="samples/newsletter/">Newsletter - "The September Shine Report"</a>
+  </div>
+</section>
+<section>
+  <h2 class="serif">How it works</h2>
+  <p class="sub">No meetings marathons. One email gets it moving.</p>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><h4>Tell us about your business</h4><p>One email in any of our three languages. We reply within one working day.</p></div>
+    <div class="step"><span class="n">2</span><h4>See a free mock</h4><p>We put together a quick concept for your business first - free to look at, no obligation.</p></div>
+    <div class="step"><span class="n">3</span><h4>Go live</h4><p>Your site or copy is delivered within 5 working days, ready to use.</p></div>
+  </div>
 </section>
 <section class="contact" id="contact">
-  <h2>Tell us about your business</h2>
-  <p style="color:var(--muted)">Email us in English, 廣東話 or 普通话 - we reply within one working day.</p>
-  <a class="mail" href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
+  <h2 class="serif">Tell us about your business</h2>
+  <p>Email us in English, 廣東話 or 普通话 - we reply within one working day.</p>
+  <a class="btn primary" href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
 </section>
 </div>
 
 <div class="lang" id="lang-hk">
-<section class="hero">
-  <h1>幾日之內,幫你嘅生意上網 - 唔使等幾個月。</h1>
-  <p>Slateworks Studio 為香港商戶製作快捷、企理嘅一頁式網站,仲會寫好網站入面嘅所有文字:網頁文案、文章、電子報、簡報同文件。英文、廣東話、普通話,全部做到足。</p>
-</section>
-<section>
-  <h2>服務內容</h2>
-  <div class="cards">
-    <div class="card"><h3>一頁式網站</h3><p>為你嘅生意整一個完整、手機睇得舒服嘅網頁:菜單或服務、相片、營業時間、地圖、WhatsApp/聯絡按鈕。五個工作天內上線。</p><div class="price">HK$3,800 - HK$6,500</div></div>
-    <div class="card"><h3>網頁及市場推廣文案</h3><p>主頁同「關於我們」文案、Google 商業檔案簡介、宣傳單張同社交媒體帖文 - 中英文都寫到你把聲。</p><div class="price">HK$1,200 起</div></div>
-    <div class="card"><h3>文章及電子報</h3><p>SEO 文章同電子通訊,令客戶記住你。可提供三語版本。</p><div class="price">HK$600 - HK$1,800 / 篇</div></div>
-    <div class="card"><h3>簡報及文件</h3><p>融資簡報、公司簡介、建議書同報告 - 結構、文字、排版一手包辦。</p><div class="price">HK$2,500 - HK$4,500</div></div>
+<section class="hero" style="border-top:none">
+  <div class="eyebrow">香港 &middot; 網站及文案</div>
+  <h1 class="serif">幾日之內,幫你嘅生意上網。文字都寫到你把聲。</h1>
+  <p>Slateworks Studio 為香港商戶製作快捷、企理嘅一頁式網站,仲會寫好網站入面嘅所有文字。英文、廣東話、普通話,全部做到足。</p>
+  <div class="cta">
+    <a class="btn primary" href="#samples">睇示範作品</a>
+    <a class="btn ghost" href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
   </div>
 </section>
-<section class="samples">
-  <h2>示範作品</h2>
-  <p class="note" style="margin-bottom:14px">以下係我哋製作嘅概念示範,涵蓋所有服務 - 網站、文案、文章、電子報同簡報。全部係示範作品,並非真實客戶項目。</p>
-  <a href="demo/restaurant/">網站示範 - 點心軒(餐廳)</a>
-  <a href="demo/salon/">網站示範 - Lustre Salon(髮廊)</a>
-  <a href="demo/tailor/">網站示範 - Peak Tailors(裁縫店)</a>
-  <a href="samples/webcopy/">網頁及推廣文案 - 咖啡店文案示範</a>
-  <a href="samples/article/">SEO 文章 -「Yum Cha 101」</a>
-  <a href="samples/newsletter/">電子報 -「九月號亮澤通訊」</a>
-  <a href="samples/deck/">融資簡報 - Harbour Peak Roasters(8 頁)</a>
+<section>
+  <h2 class="serif">服務內容</h2>
+  <p class="sub">專注兩兩樣,樣樣做好:網站,同網站上嘅文字。</p>
+  <div class="cards">
+    <div class="card"><h3>一頁式網站</h3><p>為你嘅生意整一個完整、手機睇得舒服嘅網頁:菜單或服務、相片、營業時間、地圖、WhatsApp 按鈕。五個工作天內上線。</p><div class="price">HK$3,800 - HK$6,500</div></div>
+    <div class="card"><h3>網頁及市場推廣文案</h3><p>主頁同「關於我們」文案、Google 商業檔案簡介、宣傳單張同社交媒體帖文 - 中英文都寫到你把聲。</p><div class="price">HK$1,200 起</div></div>
+    <div class="card"><h3>文章及電子報</h3><p>SEO 文章同電子通訊,令客戶記住你。可提供三語版本。</p><div class="price">HK$600 - HK$1,800 / 篇</div></div>
+  </div>
+</section>
+<section class="samples" id="samples">
+  <h2 class="serif">示範作品</h2>
+  <p class="sub">以下係我哋製作嘅概念示範,涵蓋所有服務 - 網站、文案、文章同電子報。全部係示範作品,並非真實客戶項目。</p>
+  <div class="shots">
+    <a class="shot" href="demo/restaurant/"><img src="demo/restaurant/dimsum-hero.png" alt="餐廳網站示範"><span class="cap">點心軒<small>網站示範 &middot; 餐廳 &middot; 上環</small></span></a>
+    <a class="shot" href="demo/salon/"><img src="demo/salon/salon-hero.png" alt="髮廊網站示範"><span class="cap">Lustre Salon<small>網站示範 &middot; 髮廊 &middot; 銅鑼灣</small></span></a>
+    <a class="shot" href="demo/tailor/"><img src="demo/tailor/tailor-hero.png" alt="裁縫店網站示範"><span class="cap">Peak Tailors<small>網站示範 &middot; 裁縫店 &middot; 中環</small></span></a>
+  </div>
+  <div class="links">
+    <a href="samples/webcopy/">網頁及推廣文案 - 咖啡店文案示範</a>
+    <a href="samples/article/">SEO 文章 -「Yum Cha 101」</a>
+    <a href="samples/newsletter/">電子報 -「九月號亮澤通訊」</a>
+  </div>
+</section>
+<section>
+  <h2 class="serif">合作流程</h2>
+  <p class="sub">唔使開長會。一個電郵就開始。</p>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><h4>講吓你嘅生意</h4><p>三種語言隨便一種,一個電郵就得。一個工作天內回覆。</p></div>
+    <div class="step"><span class="n">2</span><h4>免費示範設計</h4><p>我哋會先為你嘅生意整一個快速概念 - 免費睇,冇任何責任。</p></div>
+    <div class="step"><span class="n">3</span><h4>正式上線</h4><p>網站或文案五個工作天內交付,即刻用得。</p></div>
+  </div>
 </section>
 <section class="contact" id="contact">
-  <h2>同我哋講吓你嘅生意</h2>
-  <p style="color:var(--muted)">可以用英文、廣東話或普通話電郵我哋 - 一個工作天內回覆。</p>
-  <a class="mail" href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
+  <h2 class="serif">同我哋講吓你嘅生意</h2>
+  <p>可以用英文、廣東話或普通話電郵我哋 - 一個工作天內回覆。</p>
+  <a class="btn primary" href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
 </section>
 </div>
 
 <div class="lang" id="lang-cn">
-<section class="hero">
-  <h1>几天之内,让您的生意上线 - 不用等几个月。</h1>
-  <p>Slateworks Studio 为香港商户制作快速、整洁的一页式网站,并撰写网站所需的全部文字:网页文案、文章、电子报、演示文稿和文件。英文、粤语、普通话,全部做到位。</p>
-</section>
-<section>
-  <h2>服务内容</h2>
-  <div class="cards">
-    <div class="card"><h3>一页式网站</h3><p>为您的生意制作完整、手机体验良好的网页:菜单或服务、照片、营业时间、地图、WhatsApp/联系按钮。五个工作日内上线。</p><div class="price">HK$3,800 - HK$6,500</div></div>
-    <div class="card"><h3>网页及市场推广文案</h3><p>主页和"关于我们"文案、Google 商业档案简介、宣传单张和社交媒体帖子 - 中英文都写出您的语气。</p><div class="price">HK$1,200 起</div></div>
-    <div class="card"><h3>文章及电子报</h3><p>SEO 文章和电子通讯,让客户记住您。可提供三语版本。</p><div class="price">HK$600 - HK$1,800 / 篇</div></div>
-    <div class="card"><h3>演示文稿及文件</h3><p>融资演示、公司简介、建议书和报告 - 结构、文字、排版一手包办。</p><div class="price">HK$2,500 - HK$4,500</div></div>
+<section class="hero" style="border-top:none">
+  <div class="eyebrow">香港 &middot; 网站及文案</div>
+  <h1 class="serif">几天之内,让您的生意上线。文字也写出您的语气。</h1>
+  <p>Slateworks Studio 为香港商户制作快速、整洁的一页式网站,并撰写网站所需的全部文字。英文、粤语、普通话,全部做到位。</p>
+  <div class="cta">
+    <a class="btn primary" href="#samples">查看示范作品</a>
+    <a class="btn ghost" href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
   </div>
 </section>
-<section class="samples">
-  <h2>示范作品</h2>
-  <p class="note" style="margin-bottom:14px">以下是我们制作的概念示范,涵盖所有服务 - 网站、文案、文章、电子报和演示文稿。全部是示范作品,并非真实客户项目。</p>
-  <a href="demo/restaurant/">网站示范 - 点心轩(餐厅)</a>
-  <a href="demo/salon/">网站示范 - Lustre Salon(发廊)</a>
-  <a href="demo/tailor/">网站示范 - Peak Tailors(裁缝店)</a>
-  <a href="samples/webcopy/">网页及推广文案 - 咖啡店文案示范</a>
-  <a href="samples/article/">SEO 文章 -「Yum Cha 101」</a>
-  <a href="samples/newsletter/">电子报 -「九月号亮泽通讯」</a>
-  <a href="samples/deck/">融资演示 - Harbour Peak Roasters(8 页)</a>
+<section>
+  <h2 class="serif">服务内容</h2>
+  <p class="sub">专注两样,样样做好:网站,和网站上的文字。</p>
+  <div class="cards">
+    <div class="card"><h3>一页式网站</h3><p>为您的生意制作完整、手机体验良好的网页:菜单或服务、照片、营业时间、地图、WhatsApp 按钮。五个工作日内上线。</p><div class="price">HK$3,800 - HK$6,500</div></div>
+    <div class="card"><h3>网页及市场推广文案</h3><p>主页和"关于我们"文案、Google 商业档案简介、宣传单张和社交媒体帖子 - 中英文都写出您的语气。</p><div class="price">HK$1,200 起</div></div>
+    <div class="card"><h3>文章及电子报</h3><p>SEO 文章和电子通讯,让客户记住您。可提供三语版本。</p><div class="price">HK$600 - HK$1,800 / 篇</div></div>
+  </div>
+</section>
+<section class="samples" id="samples">
+  <h2 class="serif">示范作品</h2>
+  <p class="sub">以下是我们制作的概念示范,涵盖所有服务 - 网站、文案、文章和电子报。全部是示范作品,并非真实客户项目。</p>
+  <div class="shots">
+    <a class="shot" href="demo/restaurant/"><img src="demo/restaurant/dimsum-hero.png" alt="餐厅网站示范"><span class="cap">点心轩<small>网站示范 &middot; 餐厅 &middot; 上环</small></span></a>
+    <a class="shot" href="demo/salon/"><img src="demo/salon/salon-hero.png" alt="发廊网站示范"><span class="cap">Lustre Salon<small>网站示范 &middot; 发廊 &middot; 铜锣湾</small></span></a>
+    <a class="shot" href="demo/tailor/"><img src="demo/tailor/tailor-hero.png" alt="裁缝店网站示范"><span class="cap">Peak Tailors<small>网站示范 &middot; 裁缝店 &middot; 中环</small></span></a>
+  </div>
+  <div class="links">
+    <a href="samples/webcopy/">网页及推广文案 - 咖啡店文案示范</a>
+    <a href="samples/article/">SEO 文章 -「Yum Cha 101」</a>
+    <a href="samples/newsletter/">电子报 -「九月号亮泽通讯」</a>
+  </div>
+</section>
+<section>
+  <h2 class="serif">合作流程</h2>
+  <p class="sub">不用开长会。一封邮件就开始。</p>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><h4>告诉我们您的生意</h4><p>三种语言任选,一封邮件即可。一个工作日内回复。</p></div>
+    <div class="step"><span class="n">2</span><h4>免费示范设计</h4><p>我们会先为您的生意做一个快速概念 - 免费查看,没有任何义务。</p></div>
+    <div class="step"><span class="n">3</span><h4>正式上线</h4><p>网站或文案五个工作日内交付,即可使用。</p></div>
+  </div>
 </section>
 <section class="contact" id="contact">
-  <h2>告诉我们您的生意</h2>
-  <p style="color:var(--muted)">可以用英文、粤语或普通话电邮我们 - 一个工作日内回复。</p>
-  <a class="mail" href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
+  <h2 class="serif">告诉我们您的生意</h2>
+  <p>可以用英文、粤语或普通话电邮我们 - 一个工作日内回复。</p>
+  <a class="btn primary" href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
 </section>
 </div>
 
-<footer>Slateworks Studio - hello@slateworksstudio.com</footer>
+<footer>Slateworks Studio &middot; Websites &amp; writing for Hong Kong business &middot; hello@slateworksstudio.com</footer>
 </div>
 <script>
 function setLang(l){
