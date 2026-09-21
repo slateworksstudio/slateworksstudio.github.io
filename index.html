@@ -3,94 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Slateworks Studio - Writing, Documents & One-Page Websites</title>
-<meta name="description" content="Slateworks Studio produces articles, newsletters, pitch decks, resumes and one-page websites for businesses that need sharp work delivered fast.">
+<title>Slateworks Studio - Websites, Writing & Documents for Hong Kong Business</title>
+<meta name="description" content="Slateworks Studio builds one-page websites and produces sharp writing and documents for Hong Kong businesses. Trilingual: English, 繁體中文, 简体中文.">
 <style>
-  :root { --ink:#1c2024; --slate:#46525e; --paper:#f7f6f3; --accent:#c8541f; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: Georgia, 'Times New Roman', serif; background:var(--paper); color:var(--ink); line-height:1.6; }
-  header { padding:2rem 6vw; display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid #ddd8cf; }
-  .logo { font-size:1.3rem; font-weight:bold; letter-spacing:0.04em; }
-  .logo span { color:var(--accent); }
-  nav a { color:var(--slate); text-decoration:none; margin-left:1.5rem; font-size:0.95rem; }
-  nav a:hover { color:var(--accent); }
-  .hero { padding:5rem 6vw 4rem; max-width:52rem; }
-  .hero h1 { font-size:2.6rem; line-height:1.2; margin-bottom:1.2rem; }
-  .hero p { font-size:1.15rem; color:var(--slate); max-width:40rem; }
-  section { padding:3rem 6vw; max-width:64rem; }
-  h2 { font-size:1.6rem; margin-bottom:1.5rem; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-  .card { background:#fff; border:1px solid #e3ded4; border-radius:6px; padding:1.6rem; }
-  .card h3 { font-size:1.1rem; margin-bottom:0.5rem; }
-  .card p { color:var(--slate); font-size:0.97rem; }
-  .card .price { display:block; margin-top:0.8rem; font-size:0.9rem; color:var(--accent); }
-  .how li { margin-bottom:0.6rem; color:var(--slate); }
-  .how { padding-left:1.2rem; }
-  .cta { background:var(--ink); color:var(--paper); text-align:center; padding:3.5rem 6vw; }
-  .cta h2 { color:var(--paper); }
-  .cta p { color:#b9c0c7; margin-bottom:1.5rem; }
-  .cta a { display:inline-block; background:var(--accent); color:#fff; padding:0.8rem 2rem; border-radius:4px; text-decoration:none; font-size:1.05rem; }
-  footer { padding:1.5rem 6vw; font-size:0.85rem; color:#8a9199; border-top:1px solid #ddd8cf; }
+:root{--bg:#0f1216;--panel:#171c23;--ink:#e8ecf1;--muted:#9aa5b1;--accent:#6ea8fe;--line:#262d38}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans HK","Noto Sans SC","PingFang HK","Microsoft JhengHei",sans-serif;line-height:1.6}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+header{padding:28px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;font-size:20px;letter-spacing:.5px}
+.logo span{color:var(--accent)}
+.langswitch button{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:6px 12px;margin-left:6px;border-radius:6px;cursor:pointer;font-size:13px}
+.langswitch button.active{color:var(--ink);border-color:var(--accent)}
+.hero{padding:72px 0 48px}
+.hero h1{font-size:40px;line-height:1.2;margin-bottom:18px}
+.hero p{font-size:18px;color:var(--muted);max-width:640px}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:26px;margin-bottom:20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px}
+.card h3{font-size:17px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:14.5px}
+.price{color:var(--accent);font-weight:600;margin-top:10px;font-size:15px}
+ul.plain{list-style:none;color:var(--muted);font-size:15px}
+ul.plain li{padding:6px 0;border-bottom:1px dashed var(--line)}
+.samples a{display:inline-block;margin:6px 14px 6px 0;color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:10px 16px;background:var(--panel)}
+.samples a:hover{border-color:var(--accent)}
+.note{color:var(--muted);font-size:13px;margin-top:10px}
+.contact{text-align:center;padding:56px 0}
+.contact a.mail{display:inline-block;margin-top:14px;background:var(--accent);color:#0b0e12;font-weight:700;padding:13px 30px;border-radius:8px;text-decoration:none}
+footer{padding:26px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
+.lang{display:none}
+.lang.on{display:block}
 </style>
 </head>
 <body>
+<div class="wrap">
 <header>
-  <div class="logo">Slateworks<span>.</span>Studio</div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#how">How we work</a>
-    <a href="mailto:hello@slateworksstudio.com">Contact</a>
-  </nav>
+  <div class="logo">Slateworks<span>Studio</span></div>
+  <div class="langswitch">
+    <button id="b-en" class="active" onclick="setLang('en')">EN</button><button id="b-hk" onclick="setLang('hk')">繁體</button><button id="b-cn" onclick="setLang('cn')">简体</button>
+  </div>
 </header>
 
-<div class="hero">
-  <h1>Sharp writing, clean documents, and websites that get to the point.</h1>
-  <p>Slateworks Studio is a small production studio for businesses that need professional words and pages without an agency retainer. You send a brief, we deliver finished work - fast, on a fixed price.</p>
-</div>
-
-<section id="services">
-  <h2>What we make</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Articles &amp; newsletters</h3>
-      <p>SEO articles, blog posts and email newsletters written to be read - researched, structured and edited, delivered ready to publish.</p>
-      <span class="price">From $120 per piece</span>
-    </div>
-    <div class="card">
-      <h3>Pitch decks &amp; business documents</h3>
-      <p>Investor decks, one-pagers and reports that say the thing clearly. We handle structure, copy and layout.</p>
-      <span class="price">From $250 per deck</span>
-    </div>
-    <div class="card">
-      <h3>Resume &amp; LinkedIn rewrites</h3>
-      <p>A complete rewrite of your resume and LinkedIn profile, built around the roles you actually want.</p>
-      <span class="price">From $95</span>
-    </div>
-    <div class="card">
-      <h3>One-page websites</h3>
-      <p>A fast, clean one-page site for your business - copy, design and hosting setup included. Live within a week.</p>
-      <span class="price">From $400, fixed</span>
-    </div>
+<div class="lang on" id="lang-en">
+<section class="hero">
+  <h1>Your business, online in days - not months.</h1>
+  <p>Slateworks Studio builds fast, clean one-page websites for Hong Kong businesses, and produces the writing that fills them: web copy, articles, newsletters, decks and documents. English, Cantonese and Mandarin, done properly.</p>
+</section>
+<section>
+  <h2>What we do</h2>
+  <div class="cards">
+    <div class="card"><h3>One-Page Websites</h3><p>A complete, mobile-ready page for your business: menu or services, photos, opening hours, map, WhatsApp/contact button. Launched within 5 working days.</p><div class="price">HK$3,800 - HK$6,500</div></div>
+    <div class="card"><h3>Web & Marketing Copy</h3><p>Homepage and About copy, Google Business Profile text, flyers and social posts - written to sound like you, in English and Chinese.</p><div class="price">from HK$1,200</div></div>
+    <div class="card"><h3>Articles & Newsletters</h3><p>SEO articles and email newsletters that keep customers coming back. Trilingual available.</p><div class="price">HK$600 - HK$1,800 / piece</div></div>
+    <div class="card"><h3>Decks & Documents</h3><p>Pitch decks, company profiles, proposals and reports - structured, written and formatted.</p><div class="price">HK$2,500 - HK$4,500</div></div>
   </div>
 </section>
-
-<section id="how">
-  <h2>How we work</h2>
-  <ol class="how">
-    <li>Email us what you need. We reply within one business day with a fixed price and a delivery date.</li>
-    <li>You approve the quote, we get to work. One revision round is included in everything we make.</li>
-    <li>Final files delivered with an invoice. Pay by card or PayPal.</li>
-  </ol>
+<section class="samples">
+  <h2>Sample work</h2>
+  <p class="note" style="margin-bottom:14px">Concept samples we built to show what a Slateworks one-page site looks like. These are demonstration designs, not client work.</p>
+  <a href="demo/restaurant/">Restaurant demo - Dim Sum House</a>
+  <a href="demo/salon/">Hair salon demo - Lustre Salon</a>
+  <a href="demo/tailor/">Tailor demo - Peak Tailors</a>
 </section>
-
-<div class="cta">
-  <h2>Tell us what you need made.</h2>
-  <p>One email is enough. No calls required unless you want one.</p>
-  <a href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
+<section class="contact" id="contact">
+  <h2>Tell us about your business</h2>
+  <p style="color:var(--muted)">Email us in English, 廣東話 or 普通话 - we reply within one working day.</p>
+  <a class="mail" href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
+</section>
 </div>
 
-<footer>
-  &copy; 2026 Slateworks Studio. All work delivered digitally, worldwide.
-</footer>
+<div class="lang" id="lang-hk">
+<section class="hero">
+  <h1>幾日之內,幫你嘅生意上網 - 唔使等幾個月。</h1>
+  <p>Slateworks Studio 為香港商戶製作快捷、企理嘅一頁式網站,仲會寫好網站入面嘅所有文字:網頁文案、文章、電子報、簡報同文件。英文、廣東話、普通話,全部做到足。</p>
+</section>
+<section>
+  <h2>服務內容</h2>
+  <div class="cards">
+    <div class="card"><h3>一頁式網站</h3><p>為你嘅生意整一個完整、手機睇得舒服嘅網頁:菜單或服務、相片、營業時間、地圖、WhatsApp/聯絡按鈕。五個工作天內上線。</p><div class="price">HK$3,800 - HK$6,500</div></div>
+    <div class="card"><h3>網頁及市場推廣文案</h3><p>主頁同「關於我們」文案、Google 商業檔案簡介、宣傳單張同社交媒體帖文 - 中英文都寫到你把聲。</p><div class="price">HK$1,200 起</div></div>
+    <div class="card"><h3>文章及電子報</h3><p>SEO 文章同電子通訊,令客戶記住你。可提供三語版本。</p><div class="price">HK$600 - HK$1,800 / 篇</div></div>
+    <div class="card"><h3>簡報及文件</h3><p>融資簡報、公司簡介、建議書同報告 - 結構、文字、排版一手包辦。</p><div class="price">HK$2,500 - HK$4,500</div></div>
+  </div>
+</section>
+<section class="samples">
+  <h2>示範作品</h2>
+  <p class="note" style="margin-bottom:14px">以下係我哋製作嘅概念示範,展示 Slateworks 一頁式網站嘅效果。呢啲係示範設計,並非真實客戶作品。</p>
+  <a href="demo/restaurant/">餐廳示範 - 點心軒</a>
+  <a href="demo/salon/">髮廊示範 - Lustre Salon</a>
+  <a href="demo/tailor/">裁縫店示範 - Peak Tailors</a>
+</section>
+<section class="contact" id="contact">
+  <h2>同我哋講吓你嘅生意</h2>
+  <p style="color:var(--muted)">可以用英文、廣東話或普通話電郵我哋 - 一個工作天內回覆。</p>
+  <a class="mail" href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
+</section>
+</div>
+
+<div class="lang" id="lang-cn">
+<section class="hero">
+  <h1>几天之内,让您的生意上线 - 不用等几个月。</h1>
+  <p>Slateworks Studio 为香港商户制作快速、整洁的一页式网站,并撰写网站所需的全部文字:网页文案、文章、电子报、演示文稿和文件。英文、粤语、普通话,全部做到位。</p>
+</section>
+<section>
+  <h2>服务内容</h2>
+  <div class="cards">
+    <div class="card"><h3>一页式网站</h3><p>为您的生意制作完整、手机体验良好的网页:菜单或服务、照片、营业时间、地图、WhatsApp/联系按钮。五个工作日内上线。</p><div class="price">HK$3,800 - HK$6,500</div></div>
+    <div class="card"><h3>网页及市场推广文案</h3><p>主页和"关于我们"文案、Google 商业档案简介、宣传单张和社交媒体帖子 - 中英文都写出您的语气。</p><div class="price">HK$1,200 起</div></div>
+    <div class="card"><h3>文章及电子报</h3><p>SEO 文章和电子通讯,让客户记住您。可提供三语版本。</p><div class="price">HK$600 - HK$1,800 / 篇</div></div>
+    <div class="card"><h3>演示文稿及文件</h3><p>融资演示、公司简介、建议书和报告 - 结构、文字、排版一手包办。</p><div class="price">HK$2,500 - HK$4,500</div></div>
+  </div>
+</section>
+<section class="samples">
+  <h2>示范作品</h2>
+  <p class="note" style="margin-bottom:14px">以下是我们制作的概念示范,展示 Slateworks 一页式网站的效果。这些是示范设计,并非真实客户作品。</p>
+  <a href="demo/restaurant/">餐厅示范 - 点心轩</a>
+  <a href="demo/salon/">发廊示范 - Lustre Salon</a>
+  <a href="demo/tailor/">裁缝店示范 - Peak Tailors</a>
+</section>
+<section class="contact" id="contact">
+  <h2>告诉我们您的生意</h2>
+  <p style="color:var(--muted)">可以用英文、粤语或普通话电邮我们 - 一个工作日内回复。</p>
+  <a class="mail" href="mailto:hello@slateworksstudio.com">hello@slateworksstudio.com</a>
+</section>
+</div>
+
+<footer>Slateworks Studio - hello@slateworksstudio.com</footer>
+</div>
+<script>
+function setLang(l){
+  document.querySelectorAll('.lang').forEach(function(e){e.classList.remove('on')});
+  document.getElementById('lang-'+l).classList.add('on');
+  document.querySelectorAll('.langswitch button').forEach(function(b){b.classList.remove('active')});
+  document.getElementById('b-'+l).classList.add('active');
+}
+</script>
 </body>
 </html>
